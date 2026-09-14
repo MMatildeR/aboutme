@@ -110,6 +110,54 @@
     });
   }
 
+  document.querySelectorAll(".project-media--video").forEach(function (media) {
+    var cursor = media.querySelector(".card-cursor");
+    var playBtn = media.querySelector(".video-play");
+    var video = media.querySelector(".project-video");
+
+    if (cursor && canHover && !reduceMotion) {
+      var cx = 0, cy = 0, ccx = 0, ccy = 0, craf = null;
+
+      function trackCardCursor() {
+        ccx += (cx - ccx) * 0.25;
+        ccy += (cy - ccy) * 0.25;
+        cursor.style.transform = "translate(" + ccx + "px, " + ccy + "px) translate(-50%, -50%)";
+        craf = requestAnimationFrame(trackCardCursor);
+      }
+
+      media.addEventListener("mouseenter", function (e) {
+        if (media.classList.contains("is-playing")) return;
+        var rect = media.getBoundingClientRect();
+        cx = ccx = e.clientX - rect.left;
+        cy = ccy = e.clientY - rect.top;
+        cursor.classList.add("active");
+        if (!craf) craf = requestAnimationFrame(trackCardCursor);
+      });
+      media.addEventListener("mousemove", function (e) {
+        if (media.classList.contains("is-playing")) return;
+        var rect = media.getBoundingClientRect();
+        cx = e.clientX - rect.left;
+        cy = e.clientY - rect.top;
+      });
+      media.addEventListener("mouseleave", function () {
+        cursor.classList.remove("active");
+      });
+    }
+
+    if (playBtn && video) {
+      playBtn.addEventListener("click", function () {
+        if (!video.src) {
+          video.src = playBtn.getAttribute("data-video-src");
+        }
+        media.classList.add("is-playing");
+        if (cursor) cursor.classList.remove("active");
+        video.hidden = false;
+        video.muted = true;
+        video.play().catch(function () {});
+      });
+    }
+  });
+
   var revealEls = document.querySelectorAll(".reveal");
   if ("IntersectionObserver" in window && revealEls.length) {
     var revealObserver = new IntersectionObserver(
