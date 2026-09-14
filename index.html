@@ -5,6 +5,11 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Matilde — Editora</title>
 <meta name="description" content="Portfolio de María Matilde Rodríguez, diseñadora y especialista editorial. Diseño gráfico, diseño editorial, UX/UI y contenido digital.">
+<link rel="icon" type="image/svg+xml" href="assets/favicon/favicon.svg">
+<link rel="icon" type="image/png" sizes="32x32" href="assets/favicon/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="assets/favicon/favicon-16x16.png">
+<link rel="icon" href="assets/favicon/favicon.ico" sizes="any">
+<link rel="apple-touch-icon" sizes="180x180" href="assets/favicon/apple-touch-icon.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,500&family=Work+Sans:wght@400;500;600&display=swap" rel="stylesheet">
@@ -280,10 +285,10 @@
 
         <article class="project-card reveal">
           <div class="project-media">
-            <img src="assets/behance/gift-card-mockup-composite.jpg"
-                 data-alt-es="Gift card digital para Epifanía: la pieza gráfica junto a la landing web en el teléfono, con enlace a WhatsApp para reservar el turno"
-                 data-alt-en="Digital gift card for Epifanía: the graphic piece alongside the mobile landing page, linking through to WhatsApp to book the appointment"
-                 alt="Gift card digital para Epifanía: la pieza gráfica junto a la landing web en el teléfono, con enlace a WhatsApp para reservar el turno"
+            <img src="assets/behance/gift-card-epifania.png"
+                 data-alt-es="Gift card digital para Epifanía: la pieza gráfica con el QR a la vista, junto a la landing web en el teléfono, con enlace a WhatsApp para reservar el turno"
+                 data-alt-en="Digital gift card for Epifanía: the graphic piece with its QR code revealed, alongside the mobile landing page, linking through to WhatsApp to book the appointment"
+                 alt="Gift card digital para Epifanía: la pieza gráfica con el QR a la vista, junto a la landing web en el teléfono, con enlace a WhatsApp para reservar el turno"
                  loading="lazy">
           </div>
           <div class="project-body">
@@ -325,6 +330,36 @@
               <span data-lang="en" hidden>See full case on Behance</span>
               <span aria-hidden="true">↗</span>
             </a>
+          </div>
+        </article>
+
+        <article class="project-card reveal">
+          <div class="project-media project-media--video">
+            <img class="video-poster"
+                 src="assets/behance/animacion-documento-poster.jpg"
+                 data-alt-es="Fotograma de una animación 3D de un documento histórico plegado, con su contenido manuscrito a la vista"
+                 data-alt-en="Still frame from a 3D animation of a folded historical document, with its handwritten content visible"
+                 alt="Fotograma de una animación 3D de un documento histórico plegado, con su contenido manuscrito a la vista"
+                 loading="lazy">
+            <button type="button" class="video-play" data-video-src="assets/behance/animacion-documento.mp4">
+              <span class="sr-only">
+                <span data-lang="es">Reproducir animación</span>
+                <span data-lang="en" hidden>Play animation</span>
+              </span>
+              <span aria-hidden="true">▶</span>
+            </button>
+            <video class="project-video" playsinline controls muted preload="none" hidden></video>
+            <span class="card-cursor" aria-hidden="true"></span>
+          </div>
+          <div class="project-body">
+            <h3>
+              <span data-lang="es">Animación de un documento histórico</span>
+              <span data-lang="en" hidden>Historical Document Animation</span>
+            </h3>
+            <p>
+              <span data-lang="es">Animación 3D de un documento histórico desplegándose según sus pliegues marcados. Hacé clic en la pieza para reproducirla.</span>
+              <span data-lang="en" hidden>A 3D animation of a historical document unfolding along its marked folds. Click the piece to play it.</span>
+            </p>
           </div>
         </article>
 
